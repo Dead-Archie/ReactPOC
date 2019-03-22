@@ -1,0 +1,7 @@
+.App {
+  width: 1270px;
+  margin: 0px auto;
+}
+.slick-next:before, .slick-prev:before {
+  color: #000;
+}
