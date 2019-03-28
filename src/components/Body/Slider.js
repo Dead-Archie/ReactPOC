@@ -1,7 +1,4 @@
 import React, { Component } from 'react'
-import Slider from "react-slick";
-import Container from './Container';
-import{List} from 'semantic-ui-react'
 
 class SliderComponent extends Component {
   render() {

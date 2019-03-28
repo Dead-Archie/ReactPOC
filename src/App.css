@@ -5,3 +5,12 @@
 .slick-next:before, .slick-prev:before {
   color: #000;
 }
+.slick-slide > div{
+  padding: 5px;
+}
+.truncate{
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

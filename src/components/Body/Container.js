@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { List,Card, Icon } from 'semantic-ui-react';
+import { Card, Icon } from 'semantic-ui-react';
+
 const extra = (
     <a href="#">
       <Icon name='user' />

@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import Slider from "react-slick";
-import {Card, Icon } from 'semantic-ui-react';
-const extra = (
-    <a href="#">
-      <Icon name='user' />
-      16 Friends
-    </a>
-  )
+import {Card,Image} from 'semantic-ui-react';
+import {Route,Link,Switch} from 'react-router-dom';
+import Details from './Details';
+
 
 class Discover extends Component {
   constructor(props) {
@@ -28,7 +25,7 @@ class Discover extends Component {
 
 
   render() {
-    
+    const match = this.props.match;
     const dataList = this.state;
     const isLoading = this.state.isLoading;
     if (isLoading) {
@@ -41,7 +38,7 @@ class Discover extends Component {
       slidesToScroll: 5,
       ltr: true
     };
-    console.log(this.state);
+    
     return (
     <div>
         {dataList.data.map(data =>
@@ -50,19 +47,23 @@ class Discover extends Component {
               <h3>{data.row_name} </h3>
               <Slider {...settings}>
               {data.data.map((data)=>(
-                  <Card
-                      image={data.images[2].url}
-                      key={data.id}
-                      header={data.title}
-                      meta={data.as}
-                      extra={extra}
-                  />
+                   <Link to={`${match.url}/${data.id}`} key={data.id}>
+                    <Card>
+                      <Image src={data.images[2].url} />
+                      <Card.Content>
+                        <Card.Header className="truncate" title={data.title}>{data.title} </Card.Header>
+                        <Card.Meta>{data.as}</Card.Meta>
+                      </Card.Content>
+                    </Card>
+                  </Link>
               ))}
               </Slider>
             </div>
           ):('')
           )}
-      
+        <Switch>
+          <Route path={`${match.url}/:id`} component={Details} />
+        </Switch>
     </div>
     )
   }

@@ -6,6 +6,7 @@ import Foooter from './components/Foooter';
 import Discover from './components/Body/Discover';
 import Movies from './components/Body/Movies';
 import TvSeries from './components/Body/TvSeries';
+import Details from './components/Body/Details';
 import NoMatch from './components/Body/NoMatch';
 
 class App extends Component {
@@ -16,9 +17,10 @@ class App extends Component {
         <Header/>
         <div style={{paddingTop:70+'px'}}>
           <Switch>
-            <Route exact strict path="/" component={Discover} />
+            <Route exact strict path="/discover" component={Discover} />
             <Route exact strict path="/movies" component={Movies} />
             <Route exact strict path="/tv-series" component={TvSeries}/>
+            <Route path={`/**/:id`} component={Details} />
             <Route  component={NoMatch}/>
           </Switch>
         </div>

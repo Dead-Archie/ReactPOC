@@ -8,11 +8,11 @@ class Header extends Component {
     return (
         <Menu fixed='top' inverted>
             <Container>
-                    <Link to="/" className="header item">
+                    <Link to="/discover" className="header item">
                     <Image size='mini' src={logo} style={{ marginRight: '1.5em' }} />
                     Video On Demand
                     </Link>
-                    <NavLink to="/" strict exact className="header item">Discover</NavLink>
+                    <NavLink to="/discover" strict exact className="header item">Discover</NavLink>
                     <NavLink  to="/movies" strict exact className="header item">Movies</NavLink>
                     <NavLink  to="/tv-series" strict exact  className="header item">TV Series</NavLink>
             </Container>
